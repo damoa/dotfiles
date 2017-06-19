@@ -58,3 +58,6 @@
 (evil-leader/set-key
   "f" 'helm-projectile-find-file)
 ; (setq projectile-enable-caching t)
+
+; flycheck
+(global-flycheck-mode)
