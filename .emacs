@@ -135,3 +135,12 @@ will be killed."
             (kill-buffer buf)
             (message "Killed non-existing/unreadable file buffer: %s" filename))))))
   (message "Finished reverting buffers containing unmodified files."))
+
+; shift/indent text
+(setq-default tab-width 4 indent-tabs-mode nil)
+(setq-default c-basic-offset 4 c-default-style "bsd")
+
+; dirt-indent
+(add-to-list 'load-path "~/.emacs.d/dtrt-indent")
+(require 'dtrt-indent)
+(dtrt-indent-mode 1)
