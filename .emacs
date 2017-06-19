@@ -106,3 +106,8 @@
 (global-git-gutter-mode +1)
 (setq-default right-fringe-width 10)
 (setq git-gutter-fr:side 'right-fringe)
+
+; web-mode
+(add-to-list 'auto-mode-alist '("\\.js.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
