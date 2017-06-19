@@ -144,3 +144,5 @@ will be killed."
 (add-to-list 'load-path "~/.emacs.d/dtrt-indent")
 (require 'dtrt-indent)
 (dtrt-indent-mode 1)
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
