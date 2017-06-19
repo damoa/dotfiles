@@ -52,3 +52,9 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
+
+; helm-projectile
+(require 'helm-projectile)
+(evil-leader/set-key
+  "f" 'helm-projectile-find-file)
+; (setq projectile-enable-caching t)
