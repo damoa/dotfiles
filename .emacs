@@ -6,3 +6,6 @@
 
 (setq package-enable-at-startup nil)
 (package-initialize)
+
+; line numners
+(add-hook 'prog-mode-hook 'linum-mode)
