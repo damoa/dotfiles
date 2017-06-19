@@ -46,3 +46,9 @@
 ; helm
 (add-to-list 'load-path "~/.emacs.d/helm")
 (require 'helm-config)
+
+; evil-leader
+(add-to-list 'load-path "~/.emacs.d/evil-leader")
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
