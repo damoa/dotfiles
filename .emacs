@@ -146,3 +146,12 @@ will be killed."
 (dtrt-indent-mode 1)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+; occur mode hook (thanks Aaron Bieber)
+(evil-add-hjkl-bindings occur-mode-map 'emacs
+  (kbd "/")       'evil-search-forward
+  (kbd "n")       'evil-search-next
+  (kbd "N")       'evil-search-previous
+  (kbd "C-d")     'evil-scroll-down
+  (kbd "C-u")     'evil-scroll-up
+  (kbd "C-w C-w") 'other-window)
