@@ -64,3 +64,7 @@
 
 (setq ruby-insert-encoding-magic-comment nil)
 
+; evil nerd commenter
+(global-evil-leader-mode)
+(evil-leader/set-key
+  "/" 'evilnc-comment-or-uncomment-lines)
