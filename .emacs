@@ -100,3 +100,9 @@
   (lambda ()
     (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
     (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+
+; git-gutter-fringe
+(require 'git-gutter-fringe)
+(global-git-gutter-mode +1)
+(setq-default right-fringe-width 10)
+(setq git-gutter-fr:side 'right-fringe)
