@@ -22,3 +22,23 @@
 
 ; evil nerd commenter
 (add-to-list 'load-path "~/.emacs.d/evil-nerd-commenter")
+
+; evil matchit
+(add-to-list 'load-path "~/.emacs.d/evil-matchit")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ ;(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
+;  '(coffee-tab-width 2)
+ '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (web-mode git-gutter-fringe git-gutter counsel-projectile auto-complete-auctex wgrep sass-mode robe mmm-mode helm-projectile helm-ag flycheck evil-nerd-commenter evil elscreen counsel coffee-mode auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
