@@ -20,3 +20,5 @@
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
+; evil nerd commenter
+(add-to-list 'load-path "~/.emacs.d/evil-nerd-commenter")
