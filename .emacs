@@ -14,3 +14,9 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode t)
+
+; evil surround
+(add-to-list 'load-path "~/.emacs.d/evil-surround")
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
