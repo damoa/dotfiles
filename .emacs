@@ -61,3 +61,6 @@
 
 ; flycheck
 (global-flycheck-mode)
+
+(setq ruby-insert-encoding-magic-comment nil)
+
