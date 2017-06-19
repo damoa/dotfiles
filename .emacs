@@ -78,3 +78,6 @@
   "a" 'counsel-projectile-ag)
 (global-set-key (kbd "C-x C-q") 'ivy-wgrep-change-to-wgrep-mode)
 (global-set-key (kbd "C-c C-c") 'wgrep-finish-edit)
+
+; counsel-projectile
+(counsel-projectile-on)
