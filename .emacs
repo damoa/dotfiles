@@ -73,3 +73,8 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
+
+(evil-leader/set-key
+  "a" 'counsel-projectile-ag)
+(global-set-key (kbd "C-x C-q") 'ivy-wgrep-change-to-wgrep-mode)
+(global-set-key (kbd "C-c C-c") 'wgrep-finish-edit)
