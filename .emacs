@@ -10,6 +10,10 @@
 ; line numners
 (add-hook 'prog-mode-hook 'linum-mode)
 
+; use-package
+(add-to-list 'load-path "~/.emacs.d/use-package")
+(require 'use-package)
+
 ; evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
@@ -21,6 +25,8 @@
 (global-evil-surround-mode 1)
 
 ; evil nerd commenter
+(use-package evil-nerd-commenter)
+(load-package nerd-commenter)
 (add-to-list 'load-path "~/.emacs.d/evil-nerd-commenter")
 
 ; evil matchit
@@ -54,10 +60,12 @@
 (evil-leader/set-leader ",")
 
 ; helm-projectile
+(use-package helm-projectile)
 (require 'helm-projectile)
 (evil-leader/set-key
   "f" 'helm-projectile-find-file)
 ; (setq projectile-enable-caching t)
+(setq projectile-indexing-method 'alien)
 
 ; flycheck
 (global-flycheck-mode)
@@ -102,6 +110,7 @@
     (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 ; git-gutter-fringe
+(use-package git-gutter-fringe)
 (require 'git-gutter-fringe)
 (global-git-gutter-mode +1)
 (setq-default right-fringe-width 10)
