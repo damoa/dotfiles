@@ -29,7 +29,6 @@
 
 ; evil nerd commenter
 (use-package evil-nerd-commenter)
-(load-package nerd-commenter)
 (add-to-list 'load-path "~/.emacs.d/evil-nerd-commenter")
 
 ; evil matchit
