@@ -7,6 +7,9 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+; disable startup screen
+(setq inhibit-startup-screen t)
+
 ; line numners
 (add-hook 'prog-mode-hook 'linum-mode)
 
