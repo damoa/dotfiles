@@ -167,3 +167,6 @@ will be killed."
 
 ; prevent creation of backup files
 (setq make-backup-files nil)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
