@@ -164,3 +164,6 @@ will be killed."
   (kbd "C-d")     'evil-scroll-down
   (kbd "C-u")     'evil-scroll-up
   (kbd "C-w C-w") 'other-window)
+
+; prevent creation of backup files
+(setq make-backup-files nil)
