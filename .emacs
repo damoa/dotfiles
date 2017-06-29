@@ -11,7 +11,7 @@
 (setq inhibit-startup-screen t)
 
 ; line numners
-(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'find-file-hook 'linum-mode)
 
 ; use-package
 (add-to-list 'load-path "~/.emacs.d/use-package")
