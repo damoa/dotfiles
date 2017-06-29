@@ -170,3 +170,7 @@ will be killed."
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
+; Use tab to cycle tabs
+(define-key evil-normal-state-map (kbd "<tab>") 'evil-next-buffer)
+(define-key evil-normal-state-map (kbd "<backtab>") 'evil-prev-buffer)
