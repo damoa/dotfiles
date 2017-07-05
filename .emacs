@@ -203,3 +203,7 @@ will be killed."
 ; Tabular
 (evil-leader/set-key
   "t" 'align-regexp)
+
+;; start maximized
+(custom-set-variables
+   '(initial-frame-alist (quote ((fullscreen . maximized)))))
