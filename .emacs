@@ -210,3 +210,8 @@ will be killed."
 
 ; indent in new line
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+; remember cursor position when reopening file
+(setq save-place-file "~/.emacs.d/saveplace")
+(setq-default save-place t)
+(require 'saveplace)
