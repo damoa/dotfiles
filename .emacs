@@ -38,8 +38,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
-;  '(coffee-tab-width 2)
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
@@ -217,3 +215,7 @@ will be killed."
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (require 'saveplace)
+
+; fix whitespces on tab for coffee files
+(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
+ '(coffee-tab-width 2)
