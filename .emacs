@@ -207,3 +207,6 @@ will be killed."
 ;; start maximized
 (custom-set-variables
    '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+; indent in new line
+(define-key global-map (kbd "RET") 'newline-and-indent)
