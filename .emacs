@@ -165,8 +165,11 @@ will be killed."
   (kbd "C-u")     'evil-scroll-up
   (kbd "C-w C-w") 'other-window)
 
-; prevent creation of backup files
-(setq make-backup-files nil)
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
