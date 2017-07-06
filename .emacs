@@ -216,6 +216,5 @@ will be killed."
 (setq-default save-place t)
 (require 'saveplace)
 
-; fix whitespces on tab for coffee files
-(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
- '(coffee-tab-width 2)
+; tab like vim
+(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
