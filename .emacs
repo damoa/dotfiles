@@ -231,3 +231,8 @@ will be killed."
       "Kill all other buffers."
       (interactive)
       (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
+; yasnippet
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
