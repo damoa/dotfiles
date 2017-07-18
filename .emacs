@@ -226,3 +226,8 @@ will be killed."
 (add-hook 'ruby-mode-hook
   (function (lambda ()
           (setq evil-shift-width ruby-indent-level))))
+
+(defun BdelOnly ()
+      "Kill all other buffers."
+      (interactive)
+      (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
