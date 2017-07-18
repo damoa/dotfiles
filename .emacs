@@ -226,6 +226,8 @@ will be killed."
 (add-hook 'ruby-mode-hook
   (function (lambda ()
           (setq evil-shift-width ruby-indent-level))))
+(add-hook 'javascript-mode-hook (lambda ()
+                                  (setq js-indent-level 2)))
 
 (defun BdelOnly ()
       "Kill all other buffers."
