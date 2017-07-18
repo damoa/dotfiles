@@ -240,4 +240,7 @@ will be killed."
 (yas-global-mode 1)
 
 ;; This gives you a tab of 2 spaces
-(custom-set-variables '(coffee-tab-width 2))
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (set (make-local-variable 'tab-width) 2)
+            (set (make-local-variable 'indent-tabs-mode) t)))
