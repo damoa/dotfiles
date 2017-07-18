@@ -238,3 +238,6 @@ will be killed."
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; This gives you a tab of 2 spaces
+(custom-set-variables '(coffee-tab-width 2))
