@@ -42,7 +42,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (diff-hl yaml-mode magit web-mode git-gutter-fringe git-gutter counsel-projectile auto-complete-auctex wgrep sass-mode robe mmm-mode helm-projectile helm-ag flycheck evil-nerd-commenter evil elscreen counsel auto-complete))))
+    (browse-at-remote diff-hl yaml-mode magit web-mode git-gutter-fringe git-gutter counsel-projectile auto-complete-auctex wgrep sass-mode robe mmm-mode helm-projectile helm-ag flycheck evil-nerd-commenter evil elscreen counsel auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
