@@ -245,5 +245,10 @@ will be killed."
             (set (make-local-variable 'tab-width) 2)
             (set (make-local-variable 'indent-tabs-mode) t)))
 
+; rainbow-delimiters
+(add-to-list 'load-path "~/.emacs.d/rainbow-delimiters")
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ; zeal-at-point setup
 (add-to-list 'zeal-at-point-mode-alist '(coffee-mode . ("coffee" "backbone" "underscore")))
