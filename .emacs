@@ -252,3 +252,4 @@ will be killed."
 
 ; zeal-at-point setup
 (add-to-list 'zeal-at-point-mode-alist '(coffee-mode . ("coffee" "backbone" "underscore")))
+; Add any setup before the previous lines
