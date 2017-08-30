@@ -251,5 +251,6 @@ will be killed."
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ; zeal-at-point setup
-(add-to-list 'zeal-at-point-mode-alist '(coffee-mode . ("coffee" "backbone" "underscore")))
+(with-eval-after-load 'zeal-at-point
+  (add-to-list 'zeal-at-point-mode-alist '(coffee-mode . ("coffee" "backbone" "underscore"))))
 ; Add any setup before the previous lines
