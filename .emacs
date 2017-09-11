@@ -146,17 +146,6 @@ will be killed."
             (message "Killed non-existing/unreadable file buffer: %s" filename))))))
   (message "Finished reverting buffers containing unmodified files."))
 
-; shift/indent text
-(setq-default tab-width 4 indent-tabs-mode nil)
-(setq-default c-basic-offset 4 c-default-style "bsd")
-
-; dirt-indent
-(add-to-list 'load-path "~/.emacs.d/dtrt-indent")
-(require 'dtrt-indent)
-(dtrt-indent-mode 1)
-
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ; occur mode hook (thanks Aaron Bieber)
 (evil-add-hjkl-bindings occur-mode-map 'emacs
   (kbd "/")       'evil-search-forward
@@ -205,9 +194,6 @@ will be killed."
 (evil-leader/set-key
   "t" 'align-regexp)
 
-; indent in new line
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ; remember cursor position when reopening file
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
@@ -223,12 +209,6 @@ will be killed."
 
 (global-set-key [C-f1] 'show-file-name)
 
-(add-hook 'ruby-mode-hook
-  (function (lambda ()
-          (setq evil-shift-width ruby-indent-level))))
-(add-hook 'javascript-mode-hook (lambda ()
-                                  (setq js-indent-level 2)))
-
 (defun BdelOnly ()
       "Kill all other buffers."
       (interactive)
@@ -239,16 +219,39 @@ will be killed."
 (require 'yasnippet)
 (yas-global-mode 1)
 
+; rainbow-delimiters
+(add-to-list 'load-path "~/.emacs.d/rainbow-delimiters")
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+; INDENTATION START
+
+; shift/indent text
+(setq-default tab-width 4 indent-tabs-mode nil)
+(setq-default c-basic-offset 4 c-default-style "bsd")
+
+; dirt-indent
+(add-to-list 'load-path "~/.emacs.d/dtrt-indent")
+(require 'dtrt-indent)
+(dtrt-indent-mode 1)
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+; indent in new line
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+(add-hook 'ruby-mode-hook
+  (function (lambda ()
+          (setq evil-shift-width ruby-indent-level))))
+(add-hook 'javascript-mode-hook (lambda ()
+                                  (setq js-indent-level 2)))
+
 ;; This gives you a tab of 2 spaces
 (add-hook 'coffee-mode-hook
           (lambda ()
             (set (make-local-variable 'tab-width) 2)
             (set (make-local-variable 'indent-tabs-mode) t)))
-
-; rainbow-delimiters
-(add-to-list 'load-path "~/.emacs.d/rainbow-delimiters")
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+; INDENTATION END
 
 ; zeal-at-point setup
 (with-eval-after-load 'zeal-at-point
