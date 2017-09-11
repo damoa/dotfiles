@@ -227,8 +227,8 @@ will be killed."
 ; INDENTATION START
 
 ; shift/indent text
-(setq-default tab-width 4 indent-tabs-mode nil)
-(setq-default c-basic-offset 4 c-default-style "bsd")
+(setq-default tab-width 2 indent-tabs-mode nil)
+(setq-default c-basic-offset 2 c-default-style "bsd")
 
 ; dirt-indent
 (add-to-list 'load-path "~/.emacs.d/dtrt-indent")
