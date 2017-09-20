@@ -10,7 +10,7 @@
 ; disable startup screen
 (setq inhibit-startup-screen t)
 
-; line numners
+; line numbers
 (add-hook 'find-file-hook 'linum-mode)
 
 ; use-package
