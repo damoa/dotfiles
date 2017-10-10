@@ -320,6 +320,8 @@ will be killed."
     ad-do-it))
 ; ES6 END
 
+(setq-default show-trailing-whitespace t)
+
 ; zeal-at-point setup
 (with-eval-after-load 'zeal-at-point
   (add-to-list 'zeal-at-point-mode-alist '(coffee-mode . ("coffee" "backbone" "underscore"))))
