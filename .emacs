@@ -243,11 +243,15 @@ will be killed."
 ; indent in new line
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
+; evil shift
 (add-hook 'ruby-mode-hook
   (function (lambda ()
           (setq evil-shift-width ruby-indent-level))))
-(add-hook 'javascript-mode-hook (lambda ()
-                                  (setq js-indent-level 2)))
+(add-hook 'js2-mode-hook
+  (function (lambda ()
+          (setq evil-shift-width 2))))
+(add-hook 'js2-mode-hook (lambda ()
+          (setq js-indent-level 2)))
 
 ;; This gives you a tab of 2 spaces
 (add-hook 'coffee-mode-hook
