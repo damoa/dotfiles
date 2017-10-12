@@ -13,6 +13,11 @@
 ; line numbers
 (add-hook 'find-file-hook 'linum-mode)
 
+; no automatic newline
+(setq require-final-newline nil)
+(setq next-line-add-newline nil)
+(setq-default require-final-newline nil)
+
 ; use-package
 (add-to-list 'load-path "~/.emacs.d/use-package")
 (require 'use-package)
