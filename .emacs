@@ -36,6 +36,11 @@
 (use-package evil-nerd-commenter)
 (add-to-list 'load-path "~/.emacs.d/evil-nerd-commenter")
 
+; flycheck
+(add-to-list 'load-path "~/.emacs.d/flycheck")
+(require 'flycheck)
+(global-flycheck-mode t)
+
 ; evil matchit
 (add-to-list 'load-path "~/.emacs.d/evil-matchit")
 (custom-set-variables
@@ -269,23 +274,35 @@ will be killed."
 ; INDENTATION END
 
 ; ES6 START
-;; use web-mode for .jsx files
-(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; use local eslint from node_modules before global
+;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+(setq-defyult flycheck-disabled-checkers
+  (append flycheck-disabled-checkers '(javascript-jshint)))
+(setq flycheck-checkers '(javascript-eslint))
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+(defun my/configure-web-mode-flycheck-checkers ()
+  ;; in order to have flycheck enabled in web-mode, add an entry to this
+  ;; cond that matches the web-mode engine/content-type/etc and returns the
+  ;; appropriate checker.
+  (-when-let (checker (cond
+                       ((string= web-mode-content-type "jsx")
+                        'javascript-eslint)))
+    (flycheck-mode)
+    (flycheck-select-checker checker)))
+
+(add-hook 'web-mode-hook #'my/configure-web-mode-flycheck-checkers)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-;; https://github.com/purcell/exec-path-from-shell
-;; only need exec-path-from-shell on OSX
-;; this hopefully sets up path and other vars better
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
-
-;; for better jsx syntax-highlighting in web-mode
-;; - courtesy of Patrick @halbtuerke
-(defadvice web-mode-highlight-part (around tweak-jsx activate)
-  (if (equal web-mode-content-type "jsx")
-    (let ((web-mode-enable-part-face nil))
-      ad-do-it)
-    ad-do-it))
 ; ES6 END
 
 (setq-default show-trailing-whitespace t)
