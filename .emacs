@@ -253,9 +253,10 @@ will be killed."
           (setq evil-shift-width ruby-indent-level))))
 (add-hook 'js2-mode-hook
   (function (lambda ()
-          (setq evil-shift-width 2))))
-(add-hook 'js2-mode-hook (lambda ()
-          (setq js-indent-level 2)))
+          (setq evil-shift-width 2)
+          (setq js-indent-level 2)
+          (set (make-local-variable 'tab-width) 2)
+          (set (make-local-variable 'indent-tabs-mode) t))))
 
 ;; This gives you a tab of 2 spaces
 (add-hook 'coffee-mode-hook
@@ -267,6 +268,7 @@ will be killed."
 (defun my-web-mode-hook ()
   "Hooks for Web mode. Adjust indents"
   ;;; http://web-mode.org/
+  (setq web-mode-js-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
