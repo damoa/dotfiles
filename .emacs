@@ -288,7 +288,7 @@ will be killed."
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
-(setq-defyult flycheck-disabled-checkers
+(setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers '(javascript-jshint)))
 (setq flycheck-checkers '(javascript-eslint))
 (flycheck-add-mode 'javascript-eslint 'web-mode)
