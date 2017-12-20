@@ -52,7 +52,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell json-mode js2-mode rjsx-mode browse-at-remote diff-hl yaml-mode magit web-mode git-gutter-fringe git-gutter counsel-projectile auto-complete-auctex wgrep sass-mode robe mmm-mode helm-projectile helm-ag evil-nerd-commenter evil elscreen counsel auto-complete))))
+    (helm-projectile exec-path-from-shell json-mode js2-mode rjsx-mode browse-at-remote diff-hl yaml-mode magit web-mode git-gutter-fringe git-gutter counsel-projectile auto-complete-auctex wgrep sass-mode robe mmm-mode helm-ag evil-nerd-commenter evil elscreen counsel auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -94,9 +94,6 @@
   "a" 'counsel-projectile-ag)
 (global-set-key (kbd "C-x C-q") 'ivy-wgrep-change-to-wgrep-mode)
 (global-set-key (kbd "C-c C-c") 'wgrep-finish-edit)
-
-; counsel-projectile
-(counsel-projectile-on)
 
 ; NeoTree
 (add-to-list 'load-path "~/.emacs.d/neotree")
