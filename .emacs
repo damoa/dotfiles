@@ -79,6 +79,7 @@
 (setq projectile-indexing-method 'alien)
 
 (setq ruby-insert-encoding-magic-comment nil)
+(setq gc-cons-threshold 100000000)
 
 ; evil nerd commenter shortcut
 (global-evil-leader-mode)
